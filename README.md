@@ -1,6 +1,6 @@
 # portfolio
 
-Source of [ibrahimichsan.app](https://ibrahimichsan.app). A static site built with Astro.
+Source of [www.ibrahimichsan.app](https://www.ibrahimichsan.app). A static site built with Astro.
 
 ## Run it
 

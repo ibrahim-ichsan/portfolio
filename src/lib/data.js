@@ -70,7 +70,7 @@ function build() {
       type: e.type || 'Code',
       tags: (e.tags || []).slice(0, 4),
       status: e.status || 'Active',
-      language: repo ? repo.language : '',
+      language: e.language || (repo ? repo.language : ''),      // curated wins
       updated: repo ? repo.pushed_at : '',
       meta: e.meta || '',
       icon: e.icon || 'chart',

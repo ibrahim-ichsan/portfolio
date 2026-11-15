@@ -3,8 +3,8 @@ name: Ibrahim Ichsan
 tag: Product owner, digital lending and credit risk
 headline: I turn lending rules into products people can use, and I check the numbers.
 intro: Product owner at Bank Mandiri, Oct 2023 to Jul 2026. Now an MSc Financial Data Science student at UCD Smurfit in Dublin, building credit risk models in Python.
-photo: ""            # e.g. /photo.jpg once the file is in public/
-photo_alt: Portrait of Ibrahim Ichsan
+photo: /photo.jpg
+photo_alt: Ibrahim Ichsan standing on a hillside above a lake in Wicklow
 guard_note: Every number here carries its source and my share in it. Work done at a former employer is described without internal names or documents.
 
 # A Proof Tile needs value, label and source. A tile missing any of the three is not rendered.

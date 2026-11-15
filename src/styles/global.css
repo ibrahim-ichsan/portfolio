@@ -34,7 +34,7 @@ h1{margin:0;font-weight:800;font-size:48px;line-height:1.12;letter-spacing:-0.02
 .pill.solid{background:var(--blue);color:#fff}.pill.solid:hover{color:#fff}
 .pill.soft{background:var(--info);color:var(--blue-deep);min-height:44px;padding:0 20px;font-size:14px}
 .pill.small{min-height:48px;font-size:14px;padding:0 20px}
-.photo{border-radius:20px;min-height:320px;width:100%;object-fit:cover;background:var(--info);display:flex;align-items:center;justify-content:center;color:var(--dark);font-weight:800;font-size:72px}
+.photo{border-radius:20px;min-height:320px;width:100%;object-fit:cover;object-position:35% 60%;background:var(--info);display:flex;align-items:center;justify-content:center;color:var(--dark);font-weight:800;font-size:72px}
 
 main.wrap{padding-top:32px;padding-bottom:40px;display:flex;flex-direction:column;gap:24px}
 .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:16px}

@@ -4,12 +4,14 @@
 #   case_study  true needs src/case-studies/<id>.md
 #   hidden      true removes the entry from every page
 #   include     true shows a fork or an archived repo
+#   language    optional; overrides the language GitHub detects
 #   authorship  own | assisted | none
 - id: creditflow-intelligence
   repo: creditflow-intelligence
   title: CreditFlow Intelligence
   summary: "Credit decisioning on public Home Credit data: features, a baseline model, calibration and a tested loan mathematics library."
   type: Code
+  language: Python
   tags: [Credit risk, Data and ML]
   status: Active
   icon: chart
@@ -48,6 +50,7 @@
   title: Vehicle Finance Engine
   summary: "A vehicle loan calculator rebuilt as a generic, tested engine: pricing, insurance, tiers and affordability, with synthetic parameters."
   type: Code
+  language: Python
   tags: [Lending product, Credit risk]
   status: Active
   icon: gear

@@ -2,6 +2,6 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://ibrahimichsan.app',
+  site: 'https://www.ibrahimichsan.app',
   integrations: [sitemap()],
 });
