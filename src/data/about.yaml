@@ -1,0 +1,35 @@
+summary: >-
+  I am a product owner who moved from chemical engineering into banking. At Bank Mandiri I worked on digital lending,
+  payments and risk technology, turning conditions set by business, risk and legal teams into flows, user stories and
+  acceptance criteria that could be tested. I am now studying for an MSc in Financial Data Science at UCD Smurfit in
+  Dublin and building credit risk models in Python, because I want to work where product, data and governance meet.
+experience:
+  - role: Product Owner
+    org: Bank Mandiri, digital retail banking
+    dates: Oct 2023 to Jul 2026
+    outcomes:
+      - Took a digital automotive lending product from discovery to launch in about three months, working with multifinance partners.
+      - Analysed application drop-off and recommended pre-filling fields the bank already held; the recommendation went through prioritisation into the build.
+      - Co-owned business user acceptance testing and built a release readiness checklist that three further initiatives adopted.
+  - role: Production Engineer Intern
+    org: Petrokimia Gresik
+    dates: ""
+    outcomes:
+      - Proposed cost-saving changes worth more than Rp 1 billion a year.
+education:
+  - title: MSc Financial Data Science
+    org: UCD Michael Smurfit Graduate Business School, Dublin
+    dates: Aug 2026 to present
+    note: Academic Excellence Scholarship.
+  - title: Bachelor of Engineering, Chemical Engineering
+    org: Institut Teknologi Sepuluh Nopember (ITS), Surabaya
+    dates: 2019 to 2023
+    note: Head of finance, student association. Exchange study at Universiti Teknologi MARA and Universiti Teknologi PETRONAS, 2021.
+certifications:
+  - Risk Management Level 4
+  - JIRA and Agile Project Management
+  - General Banking Level 1
+languages:
+  - Indonesian (fluent)
+  - English (fluent)
+  - Arabic (conversational)

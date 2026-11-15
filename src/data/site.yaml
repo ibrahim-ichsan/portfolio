@@ -1,0 +1,37 @@
+# All Home page copy lives here (PF-01). Nothing is hard-coded in templates.
+name: Ibrahim Ichsan
+tag: Product owner, digital lending and credit risk
+headline: I turn lending rules into products people can use, and I check the numbers.
+intro: Product owner at Bank Mandiri, Oct 2023 to Jul 2026. Now an MSc Financial Data Science student at UCD Smurfit in Dublin, building credit risk models in Python.
+photo: ""            # e.g. /photo.jpg once the file is in public/
+photo_alt: Portrait of Ibrahim Ichsan
+guard_note: Every number here carries its source and my share in it. Work done at a former employer is described without internal names or documents.
+
+# A Proof Tile needs value, label and source. A tile missing any of the three is not rendered.
+proof:
+  - label: Discovery to launch
+    value: About 3 months
+    source: A digital automotive lending product
+  - label: Acceptance test cases
+    value: More than 500
+    source: Across lending and donation products
+  - label: Release readiness checklist
+    value: Reused 3 times
+    source: Adopted by three further initiatives
+  - label: Before banking
+    value: Chemical engineer
+    source: ITS Surabaya. Head of finance, student association
+
+about_teaser: Chemical engineer by training, product owner by trade. I spent my time at the bank on lending, payments and risk technology, and I am now studying financial data science at UCD Smurfit to work where product, data and governance meet.
+
+contact:
+  note: Based in Dublin. Interested in roles in financial services and fintech.
+  linkedin: ""       # full LinkedIn URL; the button is hidden while this is empty
+  github: https://github.com/ibrahim-ichsan
+  email_user: ""     # the part before the @; the button is hidden while this is empty
+  email_domain: ""   # the part after the @
+
+cv: ""               # e.g. /cv.pdf once the file is in public/; the button is hidden while empty
+last_updated: 15 Nov 2026
+flags:
+  show_budget_template: false

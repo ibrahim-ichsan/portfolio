@@ -1,0 +1,50 @@
+---
+import Base from '../layouts/Base.astro';
+import { site, about } from '../lib/data.js';
+---
+<Base title="About" description="Career summary, experience, education and credentials of Ibrahim Ichsan." current="About">
+  <h1 slot="band" class="page">About</h1>
+  <section class="card" aria-labelledby="sum-h">
+    <h2 id="sum-h">Summary</h2>
+    <p class="p14" style="font-size:16px;line-height:26px">{about.summary}</p>
+    {site.cv && (
+      <div class="field cvrow" style="flex-direction:row">
+        <div><p class="l">Curriculum vitae</p><p class="v" style="font-size:16px">Full version, PDF</p></div>
+        <a class="pill soft" href={site.cv} download>Download<span class="skip"> CV</span></a>
+      </div>
+    )}
+  </section>
+  <section class="card" aria-labelledby="exp-h">
+    <h2 id="exp-h">Experience</h2>
+    <div class="tl">
+      {about.experience.map((e) => (
+        <div class="item">
+          <p class="t">{e.role}, {e.org}</p>
+          {e.dates && <p class="note">{e.dates}</p>}
+          <ul>{e.outcomes.slice(0, 3).map((o) => <li>{o}</li>)}</ul>
+        </div>
+      ))}
+    </div>
+  </section>
+  <div class="two">
+    <section class="card" aria-labelledby="edu-h">
+      <h2 id="edu-h">Education</h2>
+      <div class="tl">
+        {about.education.map((e) => (
+          <div class="item">
+            <p class="t">{e.title}</p>
+            <p class="note">{e.org} · {e.dates}</p>
+            {e.note && <p class="p14" style="margin-top:6px">{e.note}</p>}
+          </div>
+        ))}
+      </div>
+    </section>
+    <section class="card" aria-labelledby="cred-h">
+      <h2 id="cred-h">Credentials and languages</h2>
+      <div class="tl">
+        <div class="item"><p class="t">Certifications</p><ul>{about.certifications.map((c) => <li>{c}</li>)}</ul></div>
+        <div class="item"><p class="t">Languages</p><ul>{about.languages.map((l) => <li>{l}</li>)}</ul></div>
+      </div>
+    </section>
+  </div>
+</Base>

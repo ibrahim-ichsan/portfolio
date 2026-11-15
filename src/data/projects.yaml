@@ -1,0 +1,89 @@
+# Curated Metadata (PF-02). Key rules, see Permutation Table A in the PRD:
+#   repo        name of a public repo, or null for a case study without a repo
+#   repo_path   optional folder inside the repo; two entries may share one repo
+#   case_study  true needs src/case-studies/<id>.md
+#   hidden      true removes the entry from every page
+#   include     true shows a fork or an archived repo
+#   authorship  own | assisted | none
+- id: creditflow-intelligence
+  repo: creditflow-intelligence
+  title: CreditFlow Intelligence
+  summary: "Credit decisioning on public Home Credit data: features, a baseline model, calibration and a tested loan mathematics library."
+  type: Code
+  tags: [Credit risk, Data and ML]
+  status: Active
+  icon: chart
+  featured_order: 1
+  case_study: true
+  authorship: own
+
+- id: lending-product
+  repo: null
+  title: A digital automotive lending product, discovery to launch
+  summary: Turning conditions from business, risk and legal into flows, stories and testable acceptance criteria.
+  type: Product work
+  tags: [Lending product]
+  status: Complete
+  icon: car
+  featured_order: 2
+  case_study: true
+  authorship: none
+
+- id: cfa-research-challenge
+  repo: null
+  title: "CFA Institute Research Challenge: Hostelworld Group plc"
+  summary: A revenue bridge showing take rate was the only line that worked. BUY, target EUR 1.56 against EUR 1.17.
+  type: Equity research
+  tags: [Equity research]
+  status: Complete
+  meta: Team of four · UCD Smurfit internal round 2026
+  icon: bars
+  featured_order: 3
+  case_study: true
+  authorship: none
+
+- id: vehicle-finance-engine
+  repo: creditflow-intelligence
+  repo_path: src/vehicle_finance
+  title: Vehicle Finance Engine
+  summary: "A vehicle loan calculator rebuilt as a generic, tested engine: pricing, insurance, tiers and affordability, with synthetic parameters."
+  type: Code
+  tags: [Lending product, Credit risk]
+  status: Active
+  icon: gear
+  case_study: true
+  authorship: own
+
+- id: credit-approval-playground
+  repo: credit-approval-playground
+  title: Credit Approval Playground
+  summary: An educational Streamlit prototype. The affordability result is deterministic Python; a language model only explains it in plain words.
+  type: Code
+  tags: [Tooling, Lending product]
+  status: Complete
+  icon: play
+  case_study: false
+  authorship: assisted
+
+# Planned. Hidden until each has a public repo or a case study (Table A, row 6).
+- id: budget-pwa
+  repo: null
+  title: Budget PWA
+  summary: A pay-cycle, multi-currency budget app rebuilt from a spreadsheet.
+  type: Code
+  tags: [Tooling]
+  status: Paused
+  case_study: false
+  hidden: true
+  authorship: assisted
+
+- id: pm-agent
+  repo: null
+  title: PM Agent
+  summary: A Telegram bot that keeps tasks and job applications in one place.
+  type: Code
+  tags: [Tooling]
+  status: Paused
+  case_study: false
+  hidden: true
+  authorship: assisted

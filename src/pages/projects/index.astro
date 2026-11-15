@@ -1,0 +1,33 @@
+---
+import Base from '../../layouts/Base.astro';
+import Card from '../../layouts/Card.astro';
+import { projects, allTags } from '../../lib/data.js';
+---
+<Base title="Projects" description="Code, product work and research by Ibrahim Ichsan, with case studies and links to the source." current="Projects">
+  <h1 slot="band" class="page">Projects</h1>
+  {allTags.length > 0 && (
+    <div class="filters" role="group" aria-label="Filter projects by tag">
+      <button type="button" data-tag="" aria-pressed="true">All</button>
+      {allTags.map((t) => <button type="button" data-tag={t} aria-pressed="false">{t}</button>)}
+    </div>
+  )}
+  <div class="grid3" id="list">
+    {projects.map((p) => <Card p={p} level="h2" />)}
+  </div>
+</Base>
+<script is:inline>
+  (function () {
+    var buttons = document.querySelectorAll('.filters button');
+    var cards = document.querySelectorAll('#list .proj');
+    buttons.forEach(function (b) {
+      b.addEventListener('click', function () {
+        var tag = b.dataset.tag;
+        buttons.forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+        cards.forEach(function (c) {
+          var tags = c.dataset.tags ? c.dataset.tags.split('|') : [];
+          c.hidden = !!tag && tags.indexOf(tag) === -1;
+        });
+      });
+    });
+  })();
+</script>

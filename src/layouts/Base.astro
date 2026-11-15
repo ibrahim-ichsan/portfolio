@@ -1,0 +1,66 @@
+---
+import '../styles/global.css';
+import { site, repoDataNotice } from '../lib/data.js';
+const { title, description, current = '', hero = false } = Astro.props;
+const pageTitle = title ? `${title} | ${site.name}` : `${site.name} | ${site.tag}`;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const c = site.contact || {};
+const hasEmail = c.email_user && c.email_domain;
+const nav = [['Home', '/'], ['Projects', '/projects/'], ['About', '/about/'], ['Contact', '#contact']];
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{pageTitle}</title>
+<meta name="description" content={description}>
+<link rel="canonical" href={canonical}>
+<meta property="og:title" content={pageTitle}>
+<meta property="og:description" content={description}>
+<meta property="og:type" content="website">
+<meta property="og:url" content={canonical}>
+<meta property="og:image" content={new URL('/og.png', Astro.site)}>
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class:list={['band', { hero }]}>
+  <div class="wrap">
+    <div class="topbar">
+      <a class="brand" href="/">{site.name}</a>
+      <nav class="tabs" aria-label="Main">
+        {nav.map(([label, href]) => <a href={href} aria-current={current === label ? 'page' : undefined}>{label}</a>)}
+      </nav>
+    </div>
+    <slot name="band" />
+  </div>
+</header>
+<main id="main" class="wrap">
+  <slot />
+</main>
+<footer class="wrap">
+  <section id="contact" class="contact" aria-labelledby="contact-h">
+    <h2 id="contact-h">Get in touch</h2>
+    <p class="p14" style="color:var(--title)">{c.note}</p>
+    {c.linkedin && <a class="pill solid" href={c.linkedin} target="_blank" rel="noopener">LinkedIn</a>}
+    <div class="row">
+      {hasEmail && <a class="pill small" id="mail" href="#contact" data-u={c.email_user} data-d={c.email_domain}>Email</a>}
+      {c.github && <a class="pill small" href={c.github} target="_blank" rel="noopener">GitHub</a>}
+    </div>
+    {hasEmail && <noscript><p class="note">Email: {c.email_user} [at] {c.email_domain.replace(/\./g, ' [dot] ')}</p></noscript>}
+  </section>
+  <p class="foot">Last updated {site.last_updated}{repoDataNotice && ` · ${repoDataNotice}`}</p>
+</footer>
+<script is:inline>
+  (function () {
+    var m = document.getElementById('mail');
+    if (m) m.href = 'mai' + 'lto:' + m.dataset.u + '@' + m.dataset.d;
+  })();
+</script>
+</body>
+</html>

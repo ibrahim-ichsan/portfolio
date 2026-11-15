@@ -1,0 +1,7 @@
+{
+  "fetched_at": "2026-11-15",
+  "repos": [
+    {"name": "creditflow-intelligence", "description": "Credit decisioning, portfolio risk and BNPL checkout, built on public data.", "language": "Python", "pushed_at": "2026-11-03", "html_url": "https://github.com/ibrahim-ichsan/creditflow-intelligence", "fork": false, "archived": false},
+    {"name": "credit-approval-playground", "description": "An educational Streamlit prototype for an illustrative vehicle-finance affordability result.", "language": "Python", "pushed_at": "2026-11-03", "html_url": "https://github.com/ibrahim-ichsan/credit-approval-playground", "fork": false, "archived": false}
+  ]
+}

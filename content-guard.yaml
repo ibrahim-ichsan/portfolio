@@ -1,0 +1,14 @@
+# Content Guard (PF-06). The build fails when a blocked term, pattern or path is found.
+# Terms are matched without regard to letter case and with whitespace collapsed,
+# so a term split across a line break is still caught.
+blocked_terms:
+  - livin
+  - sukha
+  - devmandiri
+blocked_patterns:
+  - 'DECOS-\s*\d+'
+  - 'EVDEV\d+'
+blocked_paths:
+  - private/
+# An exception needs a term, the file it applies to, and a written reason.
+allow: []

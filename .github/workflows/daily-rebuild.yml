@@ -1,0 +1,15 @@
+name: Daily rebuild
+on:
+  schedule:
+    - cron: '17 5 * * *'
+  workflow_dispatch:
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call the Vercel deploy hook
+        env:
+          HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK }}
+        run: |
+          if [ -z "$HOOK" ]; then echo "No deploy hook set, nothing to do."; exit 0; fi
+          curl -fsS -X POST "$HOOK"

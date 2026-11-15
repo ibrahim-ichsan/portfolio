@@ -1,0 +1,20 @@
+---
+import { icons } from '../lib/icons.js';
+import { metaLine } from '../lib/data.js';
+const { p, level = 'h3' } = Astro.props;
+const H = level;
+---
+<article class="card proj" data-tags={p.tags.join('|')}>
+  {p.authorship && <span class="tag">{p.authorship}</span>}
+  <div class="ico" aria-hidden="true">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0058B2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d={icons[p.icon] || icons.chart}></path></svg>
+  </div>
+  <H>{p.title}</H>
+  <p class="p14">{p.summary}</p>
+  <p class="note">{metaLine(p)}{p.meta && ` · ${p.meta}`}{p.updated && ` · Updated ${p.updated}`}</p>
+  {p.tags.length > 0 && <p class="note">{p.tags.join(' · ')}</p>}
+  <div class="links">
+    {p.caseStudy && <a class="link" href={`/projects/${p.id}/`}>Case study<span class="skip"> of {p.title}</span></a>}
+    {p.github && <a class="link" href={p.github} target="_blank" rel="noopener">GitHub<span class="skip"> for {p.title}</span></a>}
+  </div>
+</article>

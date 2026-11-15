@@ -1,0 +1,57 @@
+---
+import Base from '../layouts/Base.astro';
+import Card from '../layouts/Card.astro';
+import { site, proofTiles, featured } from '../lib/data.js';
+const initials = site.name.split(' ').map((w) => w[0]).join('');
+---
+<Base description={site.intro} current="Home" hero>
+  <div slot="band" class="hero-grid">
+    <div class="hero-copy">
+      <span class="chip">{site.tag}</span>
+      <h1>{site.headline}</h1>
+      <p class="lead">{site.intro}</p>
+      <div class="actions">
+        <a class="pill white" href="/projects/">View projects</a>
+        <a class="pill ghost" href="#contact">Contact</a>
+      </div>
+    </div>
+    {site.photo
+      ? <img class="photo" src={site.photo} alt={site.photo_alt} width="420" height="320">
+      : <div class="photo" aria-hidden="true">{initials}</div>}
+  </div>
+
+  {proofTiles.length > 0 && (
+    <section class="card" aria-labelledby="ev-h">
+      <h2 id="ev-h">Evidence</h2>
+      <div class="grid4">
+        {proofTiles.map((t) => (
+          <div class="field">
+            <p class="l">{t.label}</p>
+            <p class="v">{t.value}</p>
+            <p class="l">{t.source}</p>
+          </div>
+        ))}
+      </div>
+      <div class="info">
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0058B2" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v6M12 7.5v.5"></path></svg>
+        <p>{site.guard_note}</p>
+      </div>
+    </section>
+  )}
+
+  <section aria-labelledby="fw-h" style="display:flex;flex-direction:column;gap:12px">
+    <div class="sechead">
+      <h2 id="fw-h">Featured work</h2>
+      <a class="link" href="/projects/">See all<span class="skip"> projects</span></a>
+    </div>
+    <div class="grid3">
+      {featured.map((p) => <Card p={p} />)}
+    </div>
+  </section>
+
+  <section class="card" aria-labelledby="ab-h">
+    <h2 id="ab-h">About</h2>
+    <p class="p14">{site.about_teaser}</p>
+    <a class="link" href="/about/" style="align-self:flex-start">Read more</a>
+  </section>
+</Base>

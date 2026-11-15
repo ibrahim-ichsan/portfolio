@@ -1,0 +1,29 @@
+---
+import Base from '../../layouts/Base.astro';
+import { caseStudies, metaLine } from '../../lib/data.js';
+export function getStaticPaths() {
+  return caseStudies.map((p, i) => ({
+    params: { id: p.id },
+    props: { p, prev: caseStudies[i - 1] || null, next: caseStudies[i + 1] || null },
+  }));
+}
+const { p, prev, next } = Astro.props;
+---
+<Base title={p.title} description={p.summary} current="Projects">
+  <div slot="band" class="hero-copy">
+    {p.authorship && <span class="chip">{p.authorship}</span>}
+    <h1 class="page">{p.title}</h1>
+    <p class="lead" style="font-size:14px">{metaLine(p)}{p.meta && ` · ${p.meta}`}{p.updated && ` · Updated ${p.updated}`} · {p.caseStudy.minutes} min read</p>
+  </div>
+  <article class="card prose" set:html={p.caseStudy.html} />
+  {p.github && (
+    <section class="card" aria-labelledby="ln-h">
+      <h2 id="ln-h">Links</h2>
+      <a class="link" href={p.github} target="_blank" rel="noopener" style="align-self:flex-start">Source on GitHub</a>
+    </section>
+  )}
+  <nav class="prevnext" aria-label="More case studies">
+    {prev ? <a class="link" href={`/projects/${prev.id}/`}>Previous: {prev.title}</a> : <span></span>}
+    {next ? <a class="link" href={`/projects/${next.id}/`}>Next: {next.title}</a> : <span></span>}
+  </nav>
+</Base>
